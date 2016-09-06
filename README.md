@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/nonkor/cucumber-sample-test.svg?branch=master)](https://travis-ci.org/nonkor/cucumber-sample-test)
+
 # cucumber-sample-test
 End-to-end sample tests for checking website based on cucumber, watir-webdriver and watirsome frameworks
 
