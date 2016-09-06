@@ -1,0 +1,18 @@
+language: ruby
+rvm: 2.3.1
+
+before_script:
+  #- "sh -e /etc/init.d/xvfb start && sudo aptitude -y -q install unzip chromium-browser"
+  - "sh -e /etc/init.d/xvfb start && sudo apt-get install chromium-browser"
+  # "export CHROME_BIN=chromium-browser"
+  #- "wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/2.11/chromedriver_linux64.zip && sudo unzip /tmp/chromedriver_linux64.zip chromedriver -d /usr/local/bin/;"
+  #- "mkdir -p /tmp/bin && wget http://chromedriver.storage.googleapis.com/2.11/chromedriver_linux64.zip && unzip chromedriver_linux64.zip -d /tmp/bin/"
+  #- "export PATH=/tmp/bin:$PATH"
+  #- "export DISPLAY=:99.0"
+  - sleep 3 # give xvfb some time to start
+
+script: bundle exec rake travis
+
+addons:
+  firefox: "46.1"
+

@@ -9,8 +9,9 @@ require 'nokogiri'
 require_rel 'lib'
 require_rel 'pages'
 
-Testing.browser = Watir::Browser.new :firefox
-Testing.timeout = YAML.load(File.open('config/settings.yml'))[:step_timeout]
+settings = YAML.load(File.open('config/settings.yml'))
+Testing.browser = Watir::Browser.new settings[:browser]
+Testing.timeout = settings[:step_timeout]
 Testing.clean_report_repository
 
 at_exit do
