@@ -14,6 +14,6 @@ After do |scenario|
       embed screenshot, 'image/png'
     end
   else
-    puts 'Screenshot can\'t be created because browser isn\'t run'
+    puts "Screenshot can't be created because browser isn't run"
   end
 end

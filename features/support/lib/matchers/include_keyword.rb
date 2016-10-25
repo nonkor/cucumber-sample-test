@@ -8,7 +8,7 @@ RSpec::Matchers.define :include_keyword do |keyword|
 
   failure_message do |_items|
     <<-EOS
-      Expected all search results to include keyword "#{keyword}" in title/description/code
+      Expected all search results to include keyword "#{keyword}" in title/description/code/bio
       But next items do not have this keyword:
         #{@not_found}
     EOS
