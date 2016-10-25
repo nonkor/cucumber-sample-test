@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 gem 'cucumber'
 gem 'watir-webdriver'
@@ -10,3 +10,4 @@ gem 'rspec'
 gem 'rspec-collection_matchers'
 gem 'nokogiri'
 gem 'rake'
+gem 'rubocop', require: false

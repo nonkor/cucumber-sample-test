@@ -1,7 +1,5 @@
 class SearchPage < Page
-
-  #silence_warnings { ATTRIBUTES = %i[name desc code title login user_name] }
-  ATTRIBUTES = %i[name desc code title login user_name]
+  ATTRIBUTES = %i(name desc code title login user_name).freeze
 
   h3 :result_count
   nav :search_type, class: 'menu'
@@ -68,7 +66,7 @@ class SearchPage < Page
     end
   end
 
-  def initialize_page
+  def initialize_page # rubocop:disable Metrics/MethodLength
     results_div.when_present.wait_until_dom_changed
 
     case current_type
@@ -117,7 +115,7 @@ class SearchPage < Page
 
   def result_items
     result_array.map do |item|
-      item.select { |k,_| ATTRIBUTES.include?(k) }
+      item.select { |k, _| ATTRIBUTES.include?(k) }
     end
   end
 
@@ -154,5 +152,4 @@ class SearchPage < Page
   def open_content_by_index(number)
     result_array[number][:link].click
   end
-
 end

@@ -10,10 +10,8 @@ require_rel 'lib'
 require_rel 'pages'
 
 settings = YAML.load(File.open('config/settings.yml'))
-Testing.browser = Watir::Browser.new settings[:browser]
+Testing.browser = Watir::Browser.new(ENV['BROWSER'] || settings[:browser])
 Testing.timeout = settings[:step_timeout]
 Testing.clean_report_repository
 
-at_exit do
-  Testing.browser.close if Testing.browser
-end
+at_exit { Testing.browser&.close }

@@ -1,5 +1,4 @@
 class Page
-
   include Watirsome
   include Container
 
@@ -29,5 +28,4 @@ class Page
   def browser
     Testing.browser
   end
-
 end

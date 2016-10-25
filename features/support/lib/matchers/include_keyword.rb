@@ -6,7 +6,7 @@ RSpec::Matchers.define :include_keyword do |keyword|
     @not_found.empty?
   end
 
-  failure_message do |items|
+  failure_message do |_items|
     <<-EOS
       Expected all search results to include keyword "#{keyword}" in title/description/code
       But next items do not have this keyword:

@@ -1,2 +1,2 @@
-:step_timeout: 3
-:browser: :chrome
+:step_timeout: 2
+:browser: :firefox

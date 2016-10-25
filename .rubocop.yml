@@ -1,0 +1,16 @@
+AllCops:
+  DisplayCopNames: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/SignalException:
+  EnforcedStyle: only_fail
+
+Metrics/LineLength:
+  Max: 120
+
+
