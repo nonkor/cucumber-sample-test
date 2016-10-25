@@ -1,3 +1,5 @@
+require 'English'
+
 task :test do
   exec 'bundle exec cucumber'
 end
@@ -14,5 +16,5 @@ task :travis do
          'export DISPLAY=:99.0 && ' \
          'export BROWSER=chrome && ' \
          'bundle exec rake test'
-  fail '`rake test` failed!' unless $?.exitstatus.zero?
+  fail '`rake test` failed!' unless $CHILD_STATUS.exitstatus.zero?
 end
