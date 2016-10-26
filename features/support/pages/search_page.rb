@@ -1,5 +1,5 @@
 class SearchPage < Page
-  ATTRIBUTES = %i(name desc code title login user_name bio).freeze
+  ATTRIBUTES = %i(name desc code title login user_name bio email).freeze
 
   h3 :result_count
   nav :search_type, class: 'menu'
@@ -57,13 +57,15 @@ class SearchPage < Page
     container_for :result_array_divs do |item|
       user = Nokogiri::HTML(item.html).at_css(:a).next
       user = user.next if user.next.name == 'em'
+      email = item.a(class: 'email')
       login = item.as.first
       bio = item.div(class: 'user-list-bio')
       {
         login: login.text,
         user_name: user.text.strip,
         bio: (bio.present? ? bio.text : ''),
-        link: login,
+        email: (email.present? ? email.text : ''),
+        link: login
       }
     end
   end
