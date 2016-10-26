@@ -1,3 +1,7 @@
 class UserPage < Page
-  div :content, class: 'vcard-username'
+  element :content, class: 'vcard-username'
+
+  def content
+    content_element.text
+  end
 end
